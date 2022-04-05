@@ -1,13 +1,11 @@
 package cn.itcast.order.service;
 
-import cn.itcast.feign.clients.UserClient;
-import cn.itcast.feign.pojo.User;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
+import cn.itcast.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class OrderService {
@@ -15,7 +13,7 @@ public class OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
-    @Autowired
+  /*  @Autowired
     private UserClient userClient;
 
     public Order queryOrderById(Long orderId) {
@@ -25,14 +23,11 @@ public class OrderService {
         User user = userClient.findById(order.getUserId());
         // 3.封装user到Order
         order.setUser(user);
-
-        LocalDateTime.parse("");
-
         // 4.返回
         return order;
-    }
+    }*/
 
-    /*@Autowired
+    @Autowired
     private RestTemplate restTemplate;
 
     public Order queryOrderById(Long orderId) {
@@ -47,5 +42,5 @@ public class OrderService {
         order.setUser(user);
         // 4.返回
         return order;
-    }*/
+    }
 }
